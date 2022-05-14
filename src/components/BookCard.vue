@@ -21,7 +21,9 @@
         </div>
         <div class="published">
           <span>First Published: </span>
-          <span>{{ book.first_publish_year }}</span>
+          <span>{{
+            book.first_publish_year ? book.first_publish_year : "Unknown"
+          }}</span>
         </div>
       </div>
       <div class="footer">
@@ -38,11 +40,11 @@
           <div class="read-time-icon">
             <span class="material-symbols-outlined"> local_library </span>
           </div>
-          <span v-if="book.readingTime !== 0">{{ book.readingTime }}</span>
+          <span v-if="book.ebook_count_i !== 0">{{ book.ebook_count_i }}</span>
           <span>{{
-            book.readingTime === 0
+            book.ebook_count_i === 0
               ? "Not yet read."
-              : book.readingTime > 1
+              : book.ebook_count_i > 1
               ? "hours read time"
               : "hour read time"
           }}</span>
@@ -66,17 +68,28 @@ export default {
 };
 </script>
 
-<style scoped>
-.title-not-detail {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1; /* number of lines to show */
-  line-clamp: 1;
-  -webkit-box-orient: vertical;
+<style lang="scss" scoped>
+@import "/src/assets/sass/variables";
+.material-symbols-outlined {
+  color: unset;
+}
+.main span,
+.pages-count span,
+.pages-container span,
+.read-time-container span {
+  color: $color-secondary;
+  white-space: nowrap;
 }
 .book-card {
-  width: 300px;
+  width: 22.77vw;
+  padding: 1rem 0.5rem;
+  border-radius: 1rem;
+  &:hover {
+    background-color: $backgroundColor-primary-hover;
+  }
+  @media screen and (max-width: $screen-mobile) {
+    width: 90vw;
+  }
 }
 .header,
 .main,
@@ -84,37 +97,58 @@ export default {
   display: grid;
   justify-items: start;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
 }
 .header {
   cursor: pointer;
   grid-template-columns: 1fr auto;
+  padding: 0.5rem 0;
+  border-radius: 1rem;
+}
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 1rem;
+  color: $color-primary;
+}
+.title-not-detail {
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
 }
 .expand-icon {
   display: flex;
   align-items: center;
-  /*align-self: center;*/
+}
+.published span {
+  font-size: 1rem;
+  white-space: nowrap;
 }
 .main,
 .footer {
-  grid-template-columns: 1fr auto;
-}
-.header:hover {
-  background: rgba(119, 136, 153, 0.5);
+  grid-template-columns: 125px 1fr;
 }
 .editions {
-  background: #32cd32;
+  background-color: rgba(130, 199, 134, 1);
   padding: 0.1rem 1rem;
-  border-radius: 0.5rem;
-}
-.editions span {
-  color: white;
+  border-radius: 0.3rem;
+
+  span {
+    color: $color-button;
+  }
 }
 .flex-row,
 .editions {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0;
+}
+.read-time-container {
+  padding: 0;
 }
 </style>

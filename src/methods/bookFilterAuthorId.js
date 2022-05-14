@@ -1,17 +1,13 @@
 const axios = require("axios");
 
 const bookFilterAuthorId = async (authorId) => {
-  let bookList = [];
   await axios
-    .get("http://openlibrary.org/search.json?author=OL26320A")
+    .get(`https://openlibrary.org/search.json?author=${authorId}`)
     .then((res) => {
-      for (let book of res.data.docs) {
-        if (Object.values(book.author_key).includes(authorId)) {
-          console.log(book.title, book.author_key);
-        }
-      }
+      console.log(res.data.docs);
+      return res.data.docs;
     })
     .catch((error) => console.log(error));
 };
-bookFilterAuthorId("OL26320A");
+bookFilterAuthorId("OL4327048A");
 module.exports = bookFilterAuthorId;

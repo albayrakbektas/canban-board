@@ -1,2 +1,38 @@
-$primary-color: rgba(112, 112, 144, 1);
-//$secondry-color: rgba()
+$fontSize: 10px;
+$lineHeight: 10px;
+$fontWeight: 100;
+$screen-mobile: 600px;
+
+$fontSize-xs: $fontSize * 1.1;
+$fontSize-s: $fontSize * 1.2;
+$fontSize-m: $fontSize * 1.4;
+$fontSize-l: $fontSize * 2;
+$fontSize-xl: $fontSize * 2.8;
+$fontSize-xxl: $fontSize * 3;
+
+$lineHeight-xs: $lineHeight * 1.5;
+$lineHeight-s: $lineHeight * 1.6;
+$lineHeight-m: $lineHeight * 2;
+$lineHeight-l: $lineHeight * 2.6;
+$lineHeight-xl: $lineHeight * 3.7;
+$lineHeight-xxl: $lineHeight * 3.9;
+
+$fontWeight-regular: $fontWeight * 4;
+$fontWeight-medium: $fontWeight * 5;
+
+$color-primary: rgba(112, 112, 144, 1);
+$color-secondary: rgba(170, 170, 170, 1);
+$color-button: rgba(255, 255, 255, 1);
+$color-h1: rgba(44, 58, 71, 1);
+$color-loading: rgba(47, 36, 50, 1);
+$color-help-icon: rgba(50, 50, 93, 1);
+
+$backgroundColor-error: rgba(232, 34, 39, 1);
+$backgroundColor-primary: rgba(255, 255, 255, 1);
+$backgroundColor-primary-alpha: rgba(255, 255, 255, 0.5);
+$backgroundColor-primary-hover: rgba(169, 169, 169, 0.1);
+$backgroundColor-secondary: rgba(252, 252, 252, 1);
+$backgroundColor-empty-rows: rgba(245, 249 ,253, 1);
+$backgroundColor-logo: rgba(244, 244, 244, 1);
+
+$primary-box-shadow: 0 0 10px rgba(210, 215, 224, 1);

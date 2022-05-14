@@ -1,0 +1,19 @@
+[
+  { "text": "English", "value": "eng" },
+  { "text": "German", "value": "ger" },
+  { "text": "France", "value": "fre" },
+  { "text": "Denmark", "value": "dan" },
+  { "text": "Japanese", "value": "jpn" },
+  { "text": "Italian", "value": "ita" },
+  { "text": "Spanish", "value": "spa" },
+  { "text": "Russian", "value": "rus" },
+  { "text": "Poland", "value": "pol" },
+  { "text": "Czech", "value": "cze" },
+  { "text": "Turkey", "value": "tur" },
+  { "text": "Chinese", "value": "chi" },
+  { "text": "Vietnam", "value": "vie" },
+  { "text": "Latin", "value": "lat" },
+  { "text": "Sweden", "value": "swe" },
+  { "text": "Bulgarian", "value": "bul" },
+  { "text": "Portugal", "value": "por" }
+]
