@@ -64,7 +64,10 @@ export default {
   .tooltip {
     position: relative;
     cursor: pointer;
-    padding-right: 1.25rem;
+    padding-right: 1rem;
+    @media screen and (max-width: 600px) {
+      padding-right: 1.25rem;
+    }
     span:first-child {
       opacity: 50%;
       color: $color-help-icon;
