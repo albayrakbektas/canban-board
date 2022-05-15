@@ -64,7 +64,7 @@ export default {
   .tooltip {
     position: relative;
     cursor: pointer;
-    padding-right: 0.5rem;
+    padding-right: 1.25rem;
     span:first-child {
       opacity: 50%;
       color: $color-help-icon;
