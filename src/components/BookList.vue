@@ -1,7 +1,7 @@
 <template>
   <div class="book-list" :style="borderStyle">
     <div class="header">
-      <span>{{ firstPublishedYear }}</span>
+      <span>{{ firstPublishedYear || "Date Unknown" }}</span>
       <span class="material-symbols-outlined"> help_center </span>
     </div>
     <div v-for="(item, index) in bookList" :key="item.key" class="books">

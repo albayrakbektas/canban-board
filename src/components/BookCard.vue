@@ -16,7 +16,7 @@
     <div v-if="isDetail" class="detail">
       <div class="main">
         <div class="editions">
-          <span>{{ book.edition_count }} </span>
+          <span>{{ book.edition_count }}</span>
           <span>{{ book.edition_count === 1 ? "edition" : "editions" }}</span>
         </div>
         <div class="published">
@@ -136,17 +136,17 @@ export default {
   background-color: rgba(130, 199, 134, 1);
   padding: 0.1rem 1rem;
   border-radius: 0.3rem;
-
   span {
     color: $color-button;
   }
 }
 .flex-row,
-.editions {
+.editions,
+.pages-count {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0;
+  gap: 3px;
 }
 .read-time-container {
   padding: 0;

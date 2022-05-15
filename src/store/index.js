@@ -43,23 +43,6 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    // async initApp(context) {
-    //   axios
-    //     .get("https://openlibrary.org/search.json?author=OL26320A")
-    //     .then((res) => {
-    //       let hash = {};
-    //       for (let i = 0; i < res.data.docs.length; i++) {
-    //         if (!hash[res.data.docs[i]["first_publish_year"]]) {
-    //           hash[res.data.docs[i]["first_publish_year"]] = [];
-    //         }
-    //         hash[res.data.docs[i]["first_publish_year"]].unshift(
-    //           res.data.docs[i]
-    //         );
-    //       }
-    //       context.commit("setList", hash);
-    //     })
-    //     .catch((error) => console.log(error));
-    // },
     async filterSearch(context, { type, key }) {
       context.commit("setLoading", true);
       axios

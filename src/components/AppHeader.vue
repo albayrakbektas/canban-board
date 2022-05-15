@@ -13,12 +13,17 @@
         </option>
       </select>
       <div class="input-container">
-        <input v-model="inputModel" type="text" placeholder="Search..." />
+        <input
+          v-model="inputModel"
+          type="text"
+          placeholder="Search..."
+          @keyup.enter="search()"
+        />
         <label :for="inputModel"></label>
         <span
           v-if="!isLoading"
           class="material-symbols-outlined search-button"
-          @click="search()"
+          @click="search"
         >
           search
         </span>
