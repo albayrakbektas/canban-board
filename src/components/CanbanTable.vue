@@ -65,20 +65,15 @@ import BookList from "@/components/BookList";
 import SpinLoader from "@/components/SpinLoader";
 import EmptyPage from "@/components/EmptyPage";
 import languages from "@/data/language.json";
+import options from "@/data/filter-options.json";
 export default {
   name: "CanbanTable",
   components: { EmptyPage, SpinLoader, BookList },
   data() {
     return {
-      hash: {},
-      isl: false,
       selectedLanguage: "Language",
       languageOptions: languages,
-      options: [
-        { text: "Title", value: "title" },
-        { text: "Author", value: "author" },
-        { text: "Subject", value: "subject" },
-      ],
+      options: options,
     };
   },
   computed: {
@@ -93,11 +88,6 @@ export default {
   created() {
     this.$store.dispatch("filterSearch", { type: "author", key: "OL26320A" });
   },
-  methods: {
-    random() {
-      return Math.random();
-    },
-  },
 };
 </script>
 
@@ -106,60 +96,60 @@ export default {
 
 .canban-container {
   max-width: 100vw;
-}
-.result-container {
-  padding: 0 1rem 1rem 1rem;
-}
-.search-container {
-  display: flex;
-  align-items: end;
-  gap: 0.5rem;
-  margin-left: 0.5rem;
-  width: max-content;
-  border-bottom: 1px solid #a9a9a9;
+  padding-top: 1rem;
+  .result-container {
+    padding: 0 1rem;
+  }
+  .search-container {
+    display: flex;
+    align-items: end;
+    gap: 0.5rem;
+    width: max-content;
+    .filters {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid #a9a9a9;
+    }
+  }
+  .spin-container {
+    padding: 1rem;
+    gap: 0.5rem;
+    span:first-child {
+      color: $color-loading;
+      font-weight: $fontWeight-medium;
+    }
+  }
+  .select-container {
+    padding-left: 1rem;
+    align-self: center;
+    select {
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background: none;
+      &:hover {
+        background: rgba(128, 128, 128, 0.1);
+      }
+    }
+  }
+  .canban-flex {
+    display: flex;
+    position: relative;
+    overflow: scroll;
+    padding: 0.5rem;
+    @media screen and (max-width: $screen-mobile) {
+      display: grid;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .canban-column {
+      height: min-content;
+    }
+  }
 }
 .flex-row {
   display: flex;
   align-items: center;
-}
-.spin-container {
-  padding: 1rem;
-  gap: 0.5rem;
-
-  span:first-child {
-    color: $color-loading;
-    font-weight: $fontWeight-medium;
-  }
-}
-.filters {
-  display: flex;
-  gap: 0.5rem;
-}
-.select-container {
-  padding-left: 1rem;
-  align-self: center;
-}
-select {
-  cursor: pointer;
-  outline: none;
-  border: none;
-  background: none;
-
-  &:hover {
-    background: rgba(128, 128, 128, 0.1);
-  }
-}
-.canban-flex {
-  display: flex;
-  position: relative;
-  overflow: scroll;
-  padding-left: 1rem;
-  gap: 0.5rem;
-}
-.canban-flex::-webkit-scrollbar {
-  display: none;
-}
-.canban-column {
-  height: min-content;
 }
 </style>

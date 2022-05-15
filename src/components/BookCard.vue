@@ -98,7 +98,7 @@ export default {
   justify-items: start;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 }
 .header {
   cursor: pointer;
@@ -114,6 +114,7 @@ export default {
   line-clamp: 2;
   -webkit-box-orient: vertical;
   font-size: 1rem;
+  padding: 0.25rem;
   color: $color-primary;
 }
 .title-not-detail {

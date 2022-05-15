@@ -1,23 +1,23 @@
 <template>
   <div class="home">
-    <BrandLogo />
     <AppHeader />
+    <TableHeader />
     <CanbanTable />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import AppHeader from "@/components/AppHeader";
+import TableHeader from "@/components/TableHeader";
 import CanbanTable from "@/components/CanbanTable";
-import BrandLogo from "@/components/BrandLogo";
+import AppHeader from "@/components/AppHeader";
 
 export default {
   name: "HomeView",
   components: {
-    BrandLogo,
-    CanbanTable,
     AppHeader,
+    CanbanTable,
+    TableHeader,
   },
 };
 </script>

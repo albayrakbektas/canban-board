@@ -43,12 +43,12 @@ export default {
   background-color: $backgroundColor-primary-alpha;
   border-radius: 0.2rem;
   box-shadow: $box-shadow-primary;
-  @media screen and (max-width: $screen-mobile) {
-    padding: 1rem 0;
+  &::-webkit-scrollbar {
+    display: none;
   }
-}
-.book-list::-webkit-scrollbar {
-  display: none;
+  @media screen and (max-width: $screen-mobile) {
+    padding: 1rem 0.2rem;
+  }
 }
 .header {
   display: flex;
@@ -57,11 +57,14 @@ export default {
   span {
     font-size: $fontSize-l;
     color: $color-primary;
+    padding-left: 0.2rem;
   }
   .tooltip {
     position: relative;
     cursor: pointer;
+    padding-right: 0.5rem;
     span:first-child {
+      font-size: 1.25rem;
       opacity: 50%;
       color: $color-help-icon;
     }
