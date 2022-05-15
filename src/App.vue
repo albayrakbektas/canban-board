@@ -12,6 +12,7 @@ export default {
 </script>
 
 <style lang="scss">
+// @ is an alias to /src
 @import "@/assets/sass/_variables.scss";
 * {
   margin: 0;

@@ -1,6 +1,6 @@
 <template>
   <div class="header-container">
-    <h1>{{ tableName }}</h1>
+    <h1>{{ isEmptyPage ? searchError : tableName }}</h1>
     <div class="header-container-right">
       <select v-model="selected">
         <option disabled>Select a filter</option>
@@ -36,6 +36,7 @@
 <script>
 import { mapActions, mapState } from "vuex";
 import SpinLoader from "@/components/SpinLoader";
+import options from "../data/filter-options.json";
 
 export default {
   name: "AppHeader",
@@ -45,12 +46,9 @@ export default {
       selected: "author",
       duplicatedList: [],
       inputModel: "OL26320A",
+      searchError: "Invalid search key..",
       newList: [],
-      options: [
-        { text: "Title", value: "title" },
-        { text: "Author", value: "author" },
-        { text: "Subject", value: "subject" },
-      ],
+      options: options,
     };
   },
   created() {
@@ -63,11 +61,13 @@ export default {
       "searchValue",
       "tableName",
       "isLoading",
+      "isEmptyPage",
     ]),
     ...mapActions(["filterSearch"]),
   },
   methods: {
     search() {
+      console.log(this.selected, this.inputModel);
       this.$store.dispatch("filterSearch", {
         type: this.selected,
         key: this.inputModel,
@@ -110,6 +110,7 @@ h1 {
   display: flex;
   border: 1px solid $color-help-icon;
   border-radius: 5rem;
+  box-shadow: $box-shadow-secondary;
 }
 .input-container {
   display: flex;

@@ -117,16 +117,18 @@ export default {
   color: $color-primary;
 }
 .title-not-detail {
-  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-line-clamp: 1;
   line-clamp: 1;
 }
 .expand-icon {
   display: flex;
   align-items: center;
 }
-.published span {
-  font-size: 1rem;
-  white-space: nowrap;
+.published {
+  span {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
 }
 .main,
 .footer {

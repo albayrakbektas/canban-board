@@ -1,0 +1,14 @@
+[
+  {
+    "text": "Title",
+    "value": "title"
+  },
+  {
+    "text": "Author",
+    "value": "author"
+  },
+  {
+    "text": "Subject",
+    "value": "subject"
+  }
+]

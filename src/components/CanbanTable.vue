@@ -1,6 +1,6 @@
 <template>
   <div class="canban-container">
-    <div class="flex-row result-container">
+    <div v-if="!isEmptyPage" class="flex-row result-container">
       <div
         v-if="searchKey && searchValue && !isLoading"
         class="search-container"
@@ -33,7 +33,7 @@
         </select>
       </div>
     </div>
-    <div class="canban-flex">
+    <div v-if="!isEmptyPage" class="canban-flex">
       <div class="canban-column" v-for="(item, index) in bookList" :key="index">
         <BookList
           :border-style="`border-top: 4px solid rgba(${
@@ -47,10 +47,15 @@
               : item.first_publish_year
           "
           :book-list="item"
+          :tooltip-text="{
+            title: item[0].title,
+            authorName: item[0].author_name[0],
+            firstPublishYear: item[0].first_publish_year,
+          }"
         />
       </div>
     </div>
-    <EmptyPage v-if="isEmptyPage" />
+    <EmptyPage v-else />
   </div>
 </template>
 

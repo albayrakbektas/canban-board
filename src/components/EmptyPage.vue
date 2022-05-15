@@ -25,7 +25,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/sass/_variables.scss";
 .empty-page {
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: $backgroundColor-secondary;
   .page-padding {
     display: grid;

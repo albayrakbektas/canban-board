@@ -57,6 +57,8 @@ export default new Vuex.Store({
           }
           if (Object.keys(hash).length === 0) {
             context.commit("setEmptyPage", true);
+          } else {
+            context.commit("setEmptyPage", false);
           }
           if (type === "author") {
             let index = res.data.docs[0].author_key.findIndex(

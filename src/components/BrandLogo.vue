@@ -1,6 +1,6 @@
 <template>
   <div class="logo-container">
-    <a class="brand-logo" href="#">
+    <a class="brand-logo" href="https://brewww.com/" target="_blank">
       <img src="../assets/brand-logo.svg" alt="brand logo" />
     </a>
   </div>
