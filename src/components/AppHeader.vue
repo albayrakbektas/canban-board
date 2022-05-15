@@ -21,6 +21,10 @@ export default {
   align-items: center;
 }
 .logo-container {
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 1;
+  top: 0;
   height: 60px;
   background-color: $backgroundColor-logo;
   .brand-logo {

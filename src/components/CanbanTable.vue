@@ -36,6 +36,7 @@
     <div v-if="!isEmptyPage" class="canban-flex">
       <div class="canban-column" v-for="(item, index) in bookList" :key="index">
         <BookList
+          v-if="filterByLanguage(item).length"
           :border-style="`border-top: 4px solid rgba(${
             (item[0].first_publish_year * index) % 265
           }, ${(item[0].first_publish_year * index) % 275}, ${
@@ -46,7 +47,7 @@
               ? item[0].first_publish_year
               : item.first_publish_year
           "
-          :book-list="item"
+          :book-list="filterByLanguage(item)"
           :tooltip-text="{
             title: item[0].title,
             authorName: item[0].author_name[0],
@@ -55,6 +56,7 @@
         />
       </div>
     </div>
+    <BackToStart v-if="!isEmptyPage" />
     <EmptyPage v-else />
   </div>
 </template>
@@ -66,15 +68,26 @@ import SpinLoader from "@/components/SpinLoader";
 import EmptyPage from "@/components/EmptyPage";
 import languages from "@/data/language.json";
 import options from "@/data/filter-options.json";
+import BackToStart from "@/components/BackToStart";
 export default {
   name: "CanbanTable",
-  components: { EmptyPage, SpinLoader, BookList },
+  components: { BackToStart, EmptyPage, SpinLoader, BookList },
   data() {
     return {
       selectedLanguage: "Language",
       languageOptions: languages,
       options: options,
     };
+  },
+  methods: {
+    filterByLanguage(item) {
+      return item.filter((book) => {
+        if (this.selectedLanguage === "Language") {
+          return true;
+        }
+        return book.language && book.language.includes(this.selectedLanguage);
+      });
+    },
   },
   computed: {
     ...mapState([

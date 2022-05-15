@@ -15,11 +15,12 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
+### Docker build
 ```
-npm run lint
+docker build -t canban-board:v1 .
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# canban-board
+### Docker deployment
+```
+docker run -p 80:8080 canban-board:v1
+```

@@ -81,7 +81,7 @@ export default {
   white-space: nowrap;
 }
 .book-card {
-  width: 22.77vw;
+  width: 21.4vw;
   padding: 1rem 0.5rem;
   border-radius: 1rem;
   &:hover {

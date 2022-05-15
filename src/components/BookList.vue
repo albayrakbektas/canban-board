@@ -38,6 +38,7 @@ export default {
 .book-list {
   position: relative;
   overflow-y: scroll;
+  max-height: 50vh;
   padding: 1rem;
   margin: 0.5rem;
   background-color: $backgroundColor-primary-alpha;
@@ -48,6 +49,7 @@ export default {
   }
   @media screen and (max-width: $screen-mobile) {
     padding: 1rem 0.2rem;
+    max-height: 60vh;
   }
 }
 .header {

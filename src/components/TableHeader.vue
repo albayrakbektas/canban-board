@@ -107,6 +107,10 @@ export default {
     }
   }
   .search-container {
+    //position: fixed;
+    //position: -webkit-sticky;
+    //bottom: 0;
+    //z-index: 0;
     display: flex;
     justify-content: center;
     border: 1px solid $color-help-icon;
