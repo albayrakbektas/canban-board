@@ -32,12 +32,16 @@
             <span class="material-symbols-outlined"> layers </span>
           </div>
           <div class="pages-count">
-            <span>{{ book.number_of_pages_median }}</span>
+            <span>{{
+              book.number_of_pages_median
+                ? book.number_of_pages_median
+                : "Unknown"
+            }}</span>
             <span>pages</span>
           </div>
         </div>
         <div class="read-time-container flex-row">
-          <div class="read-time-icon">
+          <div class="pages-icon">
             <span class="material-symbols-outlined"> local_library </span>
           </div>
           <span v-if="book.ebook_count_i !== 0">{{ book.ebook_count_i }}</span>
@@ -81,14 +85,14 @@ export default {
   white-space: nowrap;
 }
 .book-card {
-  width: 21.4vw;
-  padding: 1rem 0.5rem;
+  width: 20vw;
+  padding: 1rem;
   border-radius: 1rem;
   &:hover {
     background-color: $backgroundColor-primary-hover;
   }
   @media screen and (max-width: $screen-mobile) {
-    width: 90vw;
+    width: 80vw;
   }
 }
 .header,
@@ -97,7 +101,7 @@ export default {
   display: grid;
   justify-items: start;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 1rem 0;
 }
 .header {
@@ -113,7 +117,8 @@ export default {
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
-  font-size: 1rem;
+  font-size: $fontSize-m;
+  line-height: $lineHeight-m;
   padding: 0.25rem;
   color: $color-primary;
 }
@@ -127,8 +132,24 @@ export default {
 }
 .published {
   span {
-    font-size: 1rem;
+    font-size: $fontSize-s;
+    line-height: $lineHeight-s;
+    color: $color-secondary;
     white-space: nowrap;
+  }
+}
+.pages-icon {
+  span {
+    font-size: $fontSize-m;
+    color: $color-secondary;
+  }
+}
+.pages-count,
+.read-time-container {
+  span {
+    font-size: $fontSize-xs;
+    line-height: $lineHeight-xs;
+    color: $color-secondary;
   }
 }
 .main,
@@ -140,6 +161,8 @@ export default {
   padding: 0.1rem 1rem;
   border-radius: 0.3rem;
   span {
+    font-size: $fontSize-s;
+    line-height: $lineHeight-s;
     color: $color-button;
   }
 }

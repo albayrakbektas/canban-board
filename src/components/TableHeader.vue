@@ -90,16 +90,17 @@ export default {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
-  padding: 1rem 1.25rem;
+  padding: 1rem 2.25rem;
   align-items: center;
   height: 70px;
   @media screen and (max-width: $screen-mobile) {
     height: min-content;
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
   }
   h1 {
+    color: $color-primary;
     font-size: $fontSize-xl;
     line-height: $lineHeight-xl;
     @media screen and (max-width: $screen-mobile) {
@@ -107,10 +108,6 @@ export default {
     }
   }
   .search-container {
-    //position: fixed;
-    //position: -webkit-sticky;
-    //bottom: 0;
-    //z-index: 0;
     display: flex;
     justify-content: center;
     border: 1px solid $color-help-icon;
@@ -118,7 +115,7 @@ export default {
     padding: 0.2rem 0.8rem;
     box-shadow: $box-shadow-secondary;
     @media screen and (max-width: $screen-mobile) {
-      padding: 0.2rem 0;
+      padding: 0.2rem;
       gap: 0.2rem;
     }
     select {

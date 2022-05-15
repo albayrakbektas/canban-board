@@ -109,7 +109,7 @@ export default {
 
 .canban-container {
   max-width: 100vw;
-  padding-top: 1rem;
+  padding: 1rem;
   .result-container {
     padding: 0 1rem;
   }
@@ -118,10 +118,23 @@ export default {
     align-items: end;
     gap: 0.5rem;
     width: max-content;
+    * {
+      color: $color-result-for;
+    }
+    h3 {
+      @media screen and (max-width: $screen-mobile) {
+        font-size: $fontSize-m;
+      }
+    }
     .filters {
       display: flex;
       gap: 0.5rem;
-      border-bottom: 1px solid #a9a9a9;
+      border-bottom: 1px solid $color-result-border;
+      span {
+        @media screen and (max-width: $screen-mobile) {
+          font-size: $fontSize-s;
+        }
+      }
     }
   }
   .spin-container {
@@ -136,12 +149,14 @@ export default {
     padding-left: 1rem;
     align-self: center;
     select {
+      font-size: $fontSize-m;
+      padding: 0.2rem;
       cursor: pointer;
       outline: none;
       border: none;
       background: none;
       &:hover {
-        background: rgba(128, 128, 128, 0.1);
+        background-color: $backgroundColor-primary-hover;
       }
     }
   }
@@ -150,8 +165,10 @@ export default {
     position: relative;
     overflow: scroll;
     padding: 0.5rem;
+    gap: 1rem;
     @media screen and (max-width: $screen-mobile) {
       display: grid;
+      gap: 0;
     }
     &::-webkit-scrollbar {
       display: none;

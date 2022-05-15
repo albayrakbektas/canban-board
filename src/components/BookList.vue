@@ -38,7 +38,7 @@ export default {
 .book-list {
   position: relative;
   overflow-y: scroll;
-  max-height: 50vh;
+  max-height: 60vh;
   padding: 1rem;
   margin: 0.5rem;
   background-color: $backgroundColor-primary-alpha;
@@ -49,7 +49,6 @@ export default {
   }
   @media screen and (max-width: $screen-mobile) {
     padding: 1rem 0.2rem;
-    max-height: 60vh;
   }
 }
 .header {
@@ -58,15 +57,15 @@ export default {
   padding: 1rem 0.25rem;
   span {
     font-size: $fontSize-l;
+    line-height: $lineHeight-l;
     color: $color-primary;
-    padding-left: 0.2rem;
+    padding-left: 1rem;
   }
   .tooltip {
     position: relative;
     cursor: pointer;
     padding-right: 0.5rem;
     span:first-child {
-      font-size: 1.25rem;
       opacity: 50%;
       color: $color-help-icon;
     }
@@ -77,17 +76,18 @@ export default {
       top: 0;
       right: 105%;
       width: 240px;
-      height: 120px;
       background-color: $backgroundColor-empty-rows;
       color: #fff;
       text-align: center;
       border-radius: 6px;
-      padding: 5px 0;
+      padding: 5px;
       display: grid;
       span {
         color: $color-primary;
-        font-size: $fontSize-m;
+        font-size: $fontSize-xs;
+        line-height: $lineHeight-xs;
         opacity: 1;
+        padding: 0 1rem;
       }
     }
     &:hover .tooltip-text {

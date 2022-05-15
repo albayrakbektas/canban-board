@@ -1,5 +1,9 @@
 <template>
-  <div class="scroll-container">
+  <div
+    v-if="innerWidth <= '600' && windowTop > '50'"
+    class="scroll-container"
+    ref="container"
+  >
     <div @click="backStart" class="scroll-button">
       <span class="material-symbols-outlined"> arrow_upward </span>
     </div>
@@ -9,15 +13,32 @@
 <script>
 export default {
   name: "BackToStart",
+  data() {
+    return {
+      innerWidth: window.innerWidth,
+      windowTop: 0,
+    };
+  },
   methods: {
-    backStart() {
-      if (window.innerWidth <= "600") {
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-      } else {
-        console.log("sad");
-        // window.scrollTo({top: 0})
-      }
+    onResize() {
+      this.innerWidth = window.innerWidth;
     },
+    onScroll(e) {
+      this.windowTop = e.target.documentElement.scrollTop;
+    },
+    backStart() {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", this.onResize);
+    });
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("scroll", this.onScroll);
   },
 };
 </script>

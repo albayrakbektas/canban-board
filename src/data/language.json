@@ -1,19 +1,19 @@
 [
   { "text": "English", "value": "eng" },
   { "text": "German", "value": "ger" },
-  { "text": "France", "value": "fre" },
-  { "text": "Denmark", "value": "dan" },
+  { "text": "French", "value": "fre" },
+  { "text": "Danish", "value": "dan" },
   { "text": "Japanese", "value": "jpn" },
   { "text": "Italian", "value": "ita" },
   { "text": "Spanish", "value": "spa" },
   { "text": "Russian", "value": "rus" },
-  { "text": "Poland", "value": "pol" },
+  { "text": "Polish", "value": "pol" },
   { "text": "Czech", "value": "cze" },
-  { "text": "Turkey", "value": "tur" },
+  { "text": "Turkish", "value": "tur" },
   { "text": "Chinese", "value": "chi" },
-  { "text": "Vietnam", "value": "vie" },
+  { "text": "Vietnamese", "value": "vie" },
   { "text": "Latin", "value": "lat" },
-  { "text": "Sweden", "value": "swe" },
+  { "text": "Swedish", "value": "swe" },
   { "text": "Bulgarian", "value": "bul" },
-  { "text": "Portugal", "value": "por" }
+  { "text": "Portuguese", "value": "por" }
 ]
